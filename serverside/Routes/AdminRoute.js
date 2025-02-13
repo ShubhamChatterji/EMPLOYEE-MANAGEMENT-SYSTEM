@@ -135,6 +135,7 @@ router.post("/add_employee", upload.single("image"), (req, res) => {
             req.file.filename,
             req.body.category_id]
         con.query(sql, values, (err, result) => {
+            
             if (err) return res.json({ status: false, Error: "Query Error" })
             return res.json({ status: true })
         })
